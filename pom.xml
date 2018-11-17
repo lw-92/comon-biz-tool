@@ -3,10 +3,33 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>comon-biz-tool</groupId>
     <artifactId>comon-biz-tool</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <description>通用的一些工具封装</description>
+    <modules>
+        <module>commondependcies</module>
+        <module>core</module>
+        <module>common-biz-tool-file</module>
+    </modules>
+    <properties>
+        <google.guava.version>23.0</google.guava.version>
+        <java.encoding>UTF-8</java.encoding>
+        <java.version>1.8</java.version>
+        <common.lang.version>3.4</common.lang.version>
+        <goson.version>2.8.0</goson.version>
+    </properties>
 
+    <!--统一公共依赖，定义，不引入，子模块自己引入，统一版本-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
