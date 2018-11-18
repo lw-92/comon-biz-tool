@@ -1,6 +1,8 @@
 package service.impl;
 
 import autoconfig.SftpProperties;
+import dto.UploadContent;
+import dto.UploadResult;
 import service.FileService;
 
 /**
@@ -13,5 +15,9 @@ public class SftpFileService implements FileService{
 
     public SftpFileService(SftpProperties properties) {
         this.properties = properties;
+    }
+    @Override
+    public UploadResult upload(UploadContent content) {
+        return null;
     }
 }

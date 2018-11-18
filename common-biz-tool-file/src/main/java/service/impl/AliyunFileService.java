@@ -1,6 +1,8 @@
 package service.impl;
 
 import autoconfig.AliyunOssProperties;
+import dto.UploadContent;
+import dto.UploadResult;
 import service.FileService;
 
 /**
@@ -14,5 +16,10 @@ public class AliyunFileService implements FileService{
 
     public AliyunFileService(AliyunOssProperties properties) {
         this.properties = properties;
+    }
+
+    @Override
+    public UploadResult upload(UploadContent content) {
+        return null;
     }
 }
