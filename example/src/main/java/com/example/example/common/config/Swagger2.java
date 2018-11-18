@@ -15,14 +15,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date 2018/11/18 16:27
  * @desc
  */
-
+@Configuration
+@EnableSwagger2
 public class Swagger2 {
-
+    @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                //选择controller包
                 .apis(RequestHandlerSelectors.basePackage("com.example.example.controller"))
                 .paths(PathSelectors.any())
                 .build();
