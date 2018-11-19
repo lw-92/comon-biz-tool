@@ -2,6 +2,8 @@ package com.example.example.controller;
 
 import dto.DefaultUploadContent;
 import dto.UploadResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ public class FileController {
     private FileService fileService;
     @PostMapping("/upload")
     public UploadResult upload(MultipartFile file)throws Exception{
+
         return fileService.upload(new DefaultUploadContent(file.getInputStream()));
     }
 }
