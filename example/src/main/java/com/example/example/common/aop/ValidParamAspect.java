@@ -48,6 +48,6 @@ public class ValidParamAspect {
         }
     }
     private void throwFieldException(ValidationResult result) {
-        throw new IllegalArgumentException(result.getGlobalErrorMessage());
+        throw new IllegalArgumentException(result.getErrors().toString());
     }
 }

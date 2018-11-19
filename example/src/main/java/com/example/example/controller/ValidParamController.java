@@ -22,7 +22,7 @@ public class ValidParamController {
 
     @PostMapping("test1")
     @ResponseBody
-    @ValidParam(value = TestFormDataValidate.class, method = "validate", failFast = false)
+    @ValidParam(value = TestFormDataValidate.class, method = "validate", failFast =false )
     public void test1( @RequestBody TestFormData data){
         System.out.println(" success");
     }
