@@ -62,6 +62,12 @@
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
+		<!--热部署工具-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -78,7 +84,21 @@
 				<configuration>
 					<mainClass>com.example.example.ExampleApplication</mainClass>
 					<layout>ZIP</layout>
+					<fork>true</fork>
 				</configuration>
+				<!--ctrl + shift + alt + /,选择Registry,勾上 Compiler autoMake allow when app running-->
+				<dependencies>
+					<!-- spring热部署-->
+					<!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+					<!--当我们修改了java类后，IDEA默认是不自动编译的，而spring-boot-devtools又是监测classpath下的文件发生变化才会重启应用，所以需要设置IDEA的自动编译：
+
+（1）File-Settings-Compiler-Build Project automatically-->
+						<dependency>
+							<groupId>org.springframework</groupId>
+							<artifactId>springloaded</artifactId>
+							<version>1.2.5.RELEASE</version>
+						</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<!--将lib一起打包-->
